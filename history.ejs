@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order history</title>
+    <link rel="stylesheet"  href="/assets/history.css">
+    <style> 
+        body{
+            background:linear-gradient(to right,#be9fbe,#6c73d4);
+            
+        }
+    </style>
+</head>
+<body>
+    <button id="HomeHis">Back to Homepage</button>
+    
+        <h1>Order history</h1>
+        <div id="from-dropdown">
+            <select id="from-date-select">
+                <option value="">From</option>
+                <% for(var i = 0; i < category.length; i++){ %>
+                    <option value="<%-category[i].date_and_time %>"><%-category[i].date_and_time %></option>
+                <% } %>
+            </select>
+        </div>
+        <div id="to-dropdown">
+            <select id="to-date-select">
+                <option value="">To</option>
+                <% for(var i = 0; i < category.length; i++){ %>
+                    <option value="<%-category[i].date_and_time %>"><%-category[i].date_and_time %></option>
+                <% } %>
+            </select>
+        </div>
+        
+        <table border="1" width="50%" id="mytable">
+        <tr>
+            <th>Name</th>
+            
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Product Id</th>
+            <th>Product Name</th>
+            <th>Order Time</th>
+            <th>Cost</th>
+            
+        </tr>
+
+        <% if(category.length>0){ %>
+            <% for(var i=0;i<category.length;i++){ %>
+                <tr>
+                    <td><%-category[i].C_Name %></td>
+                    <td><%-category[i].Phone %></td>
+                    
+                    <td><%-category[i].Address %></td>
+                    <td><%-category[i].product_id %></td>
+                    <td><%-category[i].product_name %></td>
+                    <td><%-category[i].date_and_time %></td>
+                    <td><%-category[i].cost %></td>
+                    
+                </tr>
+            <% } %>
+            <% }else{  %>
+                <h1>Data not found</h1>
+            <% }  %>
+    </table>
+    
+    
+
+    <script src="index.js"></script>
+    <script>
+       
+
+    
+        /* document.addEventListener('DOMContentLoaded', function() {
+            const fromDateSelect = document.getElementById('from-date-select');
+            const toDateSelect = document.getElementById('to-date-select');
+            const categoryTable = document.getElementById('mytable');
+    
+            function fetchData() {
+                const fromDate = fromDateSelect.value;
+                const toDate = toDateSelect.value;
+    
+                fetch('/fetch-d', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ fromDate, toDate })
+                })
+                .then(response => response.json())
+                .then(data => {
+                     Clear the table body except the header row
+                    categoryTable.innerHTML = `
+                        <tr>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th>Address</th>
+                            <th>Product Id</th>
+                            <th>Product Name</th>
+                            <th>Order Time</th>
+                            <th>Cost</th>
+                        </tr>
+                    `;
+    
+                    Populate the table with fetched data
+                    data.forEach(item => {
+                        categoryTable.innerHTML += `
+                            <tr>
+                                <td>${item.C_Name}</td>
+                                <td>${item.Phone}</td>
+                                <td>${item.Address}</td>
+                                <td>${item.product_id}</td>
+                                <td>${item.product_name}</td>
+                                <td>${item.date_and_time}</td>
+                                <td>${item.cost}</td>
+                            </tr>
+                        `;
+                    });
+                })
+                .catch(error => console.error('Error:', error));
+            }
+    
+            fromDateSelect.addEventListener('change', fetchData);
+            toDateSelect.addEventListener('change', fetchData);
+    
+             Home button link
+            const homeButton = document.getElementById('HomeHis');
+            homeButton.addEventListener('click', function() {
+                window.location.href = '/admin';
+            });
+        }); */
+    
+            document.addEventListener('DOMContentLoaded', function() {
+                const fromDateSelect = document.getElementById('from-date-select');
+                const toDateSelect = document.getElementById('to-date-select');
+                const categoryTable = document.getElementById('mytable');
+            
+                // Function to fetch unique dates and populate the dropdowns
+                function populateDateDropdowns() {
+                    fetch('/api/unique-dates')
+                        .then(response => response.json())
+                        .then(dates => {
+                            dates.forEach(date => {
+                                const option = new Option(date, date);
+                                fromDateSelect.add(option);
+                                toDateSelect.add(option.cloneNode(true));
+                            });
+                        })
+                        .catch(error => console.error('Error fetching unique dates:', error));
+                }
+            
+                // Call the function to populate date dropdowns
+                populateDateDropdowns();
+            
+                function fetchData() {
+                    const fromDate = fromDateSelect.value;
+                    const toDate = toDateSelect.value;
+            
+                    fetch('/fetch-d', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ fromDate, toDate })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        // Clear the table body except the header row
+                        categoryTable.innerHTML = `
+                            <tr>
+                                <th>Name</th>
+                                <th>Phone</th>
+                                <th>Address</th>
+                                <th>Product Id</th>
+                                <th>Product Name</th>
+                                <th>Order Time</th>
+                                <th>Cost</th>
+                            </tr>
+                        `;
+            
+                        // Populate the table with fetched data
+                        data.forEach(item => {
+                            categoryTable.innerHTML += `
+                                <tr>
+                                    <td>${item.C_Name}</td>
+                                    <td>${item.Phone}</td>
+                                    <td>${item.Address}</td>
+                                    <td>${item.product_id}</td>
+                                    <td>${item.product_name}</td>
+                                    <td>${item.date_and_time}</td>
+                                    <td>${item.cost}</td>
+                                </tr>
+                            `;
+                        });
+                    })
+                    .catch(error => console.error('Error:', error));
+                }
+            
+                fromDateSelect.addEventListener('change', fetchData);
+                toDateSelect.addEventListener('change', fetchData);
+            
+                // Home button link
+                const homeButton = document.getElementById('HomeHis');
+                homeButton.addEventListener('click', function() {
+                    window.location.href = '/admin';
+                });
+            });
+            </script>
+            
+    

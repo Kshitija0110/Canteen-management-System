@@ -1,0 +1,27 @@
+app.post('/yesf', function(req, res) {
+    
+
+        var name = req.body.name;
+        var id = req.body.id;
+      
+  
+        con.connect(function(error) {
+            if (error) {
+                console.log(error); // Log the error
+                return res.send("Connection Error!");
+            }
+  
+            var sql = "INSERT INTO Signup (Feedback,Rating) VALUES (?, ?)";
+            var values = [name,id];
+  
+            con.query(sql, values, function(error, result) {
+                if (error) {
+                    console.log(error); // Log the error
+                    return res.send("Database error");
+                }
+  
+                res.sendFile(__dirname + '/Homepage.html');
+            });
+        });
+    } 
+    );

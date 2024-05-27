@@ -1,0 +1,42 @@
+/* #category-dropdown{
+    position: absolute;
+    right:3px;
+    top:470px;
+} */
+body{
+    background:linear-gradient(to right,#be9fbe,#6c73d4);
+    
+}
+#myformp{
+    position: absolute;
+    top: 450px;
+    right: 200px;
+    width: 250px;
+    height: 250px;
+    /* background-color: #ebf870; */
+    padding: 20px;
+    
+   
+}
+#costform{
+    position: absolute;
+    top: 680px;
+    right: 200px;
+    width: 250px;
+    height: 250px;
+    
+    /* background-color: #ebf870; */
+    padding: 20px;
+    
+   
+}
+#Home1{
+    position: absolute;
+    top:50px;
+    right:20px;
+  left:1000px;
+  height:max-content;
+  width: max-content;
+  font-size: larger;
+   
+}

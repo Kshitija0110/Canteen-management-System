@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category List</title>
+</head>
+<body>
+    <table border="1" width="50%">
+        <h1>Category List</h1>
+        <tr>
+            <th>Id</th>
+            <th>Category item</th>
+            <th>Actions</th>
+        </tr>
+
+        <% if(category.length>0){ %>
+            <% for(var i=0;i<category.length;i++){ %>
+                <tr>
+                    <td><%-category[i].id %></td>
+                    <td><%-category[i].Category_Name %></td>
+                    <td><a href="/delete?id=<%-category[i].id %>">Delete</a></td>
+                </tr>
+            <% } %>
+            <% }else{  %>
+                <h1>Data not found</h1>
+            <% }  %>
+    </table>
+
+    <br><br><br>
+    <form id="myform" action="" method="POST">
+        <h1>Manage Category</h1>
+        <input type="number" name="id" placeholder="Enter id:"><br><br>
+        <input type="text" name="name" placeholder="Enter category name:"><br><br>
+        <input type="submit" value="Add"><br><br>
+    </form>
+
+    <br>
+    <br>
+  
+    <button id="HOME">Back to Homepage</button>
+    
+
+    <script src="index.js"></script>
+    <script>
+         //For homepage link
+      document.addEventListener('DOMContentLoaded', function() {
+      const homeb = document.getElementById('HOME');
+
+      homeb.addEventListener('click', function() {
+      
+        window.location.href = '/admin';
+      });
+    });
+
+
+     
+   
+    </script>
+
+
+    
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        canvas {
+            max-width: 600px;
+            margin: 0 auto;
+            display: block;
+        }
+    </style>
+    <link rel="stylesheet" href="assets/admin.css"> 
+</head>
+<body>
+    <h1>Hello Admin</h1>
+    <!-- <button id="triggerButton">Click Me</button> -->
+    <img id="triggerImage" src="/assets/technical-support.png" alt="Clickable image">
+
+    <div id="movingDiv">
+    <!-- <Button  class="adminbuttons" id="Manage_Category">Manage Category</Button> -->
+    <img src="/assets/image1.png" class="img" alt="Image 1">
+    <Button  class="adminbuttons" id="New_p">New Product</Button>
+    <br><br>
+    <img src="/assets/image2.png" class="img" alt="Image 2">
+    <Button  class="adminbuttons" id="verify">Verify users</Button>
+    <br><br>
+    <img src="/assets/image3.png" class="img" alt="Image 3">
+    <Button  class="adminbuttons" id="v_orders">Verify orders</Button>
+    <br><br>
+    <img src="/assets/image4.png" class="img" alt="Image 4">
+    
+    <Button  class="adminbuttons" id="graph">Graphs and stats</Button>
+    <br><br>
+    <img src="/assets/image5.png" class="img" alt="Image 5">
+
+    <Button  class="adminbuttons" id="history">Order history</Button>
+    <br><br>
+</div>
+
+    <Button  class="adminbuttons" id="logout_a">Logout</Button>
+    <div id="h"><h3 id="h3">
+      Welcome to the Canteen Management System Admin Panel. Here you can oversee and manage all operational aspects of the canteen, 
+      including menu updates, order tracking, and user verification. 
+      Your tools for maintaining service excellence are all in one convenient place.</h3></div>
+    <script src="index.js"></script>
+    <script>
+     //For Manage Category page
+    document.addEventListener('DOMContentLoaded', function() {
+      const managec = document.getElementById('Manage_Category');
+
+      managec.addEventListener('click', function() {
+       console.log("Manage Clicked");
+        window.location.href = '/manage';
+      });
+    });
+
+        //For New product page
+        document.addEventListener('DOMContentLoaded', function() {
+          const newp = document.getElementById('New_p');
+    
+          newp.addEventListener('click', function() {
+           console.log("Manage Clicked");
+            window.location.href = '/newproduct';
+          });
+        });
+
+             //For Verify users
+    document.addEventListener('DOMContentLoaded', function() {
+        const managec = document.getElementById('verify');
+  
+        managec.addEventListener('click', function() {
+         console.log("Manage Clicked");
+          window.location.href = '/verify';
+        });
+      });
+
+      //For logout
+      document.addEventListener('DOMContentLoaded', function() {
+        const managec = document.getElementById('v_orders');
+  
+        managec.addEventListener('click', function() {
+         console.log("Manage Clicked");
+          window.location.href = '/orders';
+        });
+      });
+
+       //For history
+       document.addEventListener('DOMContentLoaded', function() {
+        const managec = document.getElementById('history');
+  
+        managec.addEventListener('click', function() {
+         console.log("Manage Clicked");
+          window.location.href = '/history';
+        });
+      });
+
+      //For verify orders
+            //For logout
+            document.addEventListener('DOMContentLoaded', function() {
+                const managec = document.getElementById('logout_a');
+          
+                managec.addEventListener('click', function() {
+                 console.log("Manage Clicked");
+                  window.location.href = '/login';
+                });
+              });
+
+              document.addEventListener('DOMContentLoaded', function() {
+             
+
+                const managec = document.getElementById('graph');
+          
+                managec.addEventListener('click', function() {
+                 console.log("Graph Clicked");
+                  window.location.href = '/graph';
+                });
+              });
+
+              let isDivVisible = false;
+
+document.getElementById('triggerImage').addEventListener('click', function() {
+    if (isDivVisible) {
+        // If the div is currently visible, move it off the screen and hide it
+        document.getElementById('movingDiv').style.left = '-400px';
+        document.getElementById('movingDiv').style.opacity = '0';
+    } else {
+        // If the div is currently hidden, move it onto the screen and show it
+        document.getElementById('movingDiv').style.left = '0px';
+        document.getElementById('movingDiv').style.opacity = '1';
+    }
+
+    // Flip the flag
+    isDivVisible = !isDivVisible;
+});
+
+
+
+    </script>
+</body>
+</html>

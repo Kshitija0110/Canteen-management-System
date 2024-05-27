@@ -1,0 +1,182 @@
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: url('nicebg.jpg'); /* Delicious fruit basket image */
+    background-size: cover; /* Cover the entire viewport */
+    display: flex;
+    justify-content: center;
+    /* Replace with your desired width and height */
+      
+    /* Optional: set other properties like background position and repeat */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+#t{
+    position:fixed;
+top:150px;
+left:150px;
+}
+#cart{
+    position: absolute;
+    top:50px;
+    right:200px;
+
+    height: auto;
+}
+#p{
+    position:fixed;
+top:150px;
+left:500px;
+}
+
+#b{
+    position:fixed;
+top:150px;
+left:850px;
+}
+
+#s{
+    position:fixed;
+top:150px;
+left:1200px;
+}
+
+#n{
+    position:fixed;
+top:450px;
+left:80px;
+}
+
+ #c{
+    position:fixed;
+top:450px;
+left:350px;
+} 
+
+ #i{
+    position:fixed;
+top:450px;
+left:660px;
+}
+
+#so{
+    position:fixed;
+top:450px;
+left:990px;
+}
+#m{
+    position:fixed;
+top:450px;
+left:1290px;
+}  
+
+#titlec {
+    color: #ffffff;
+        margin-top: 30px;
+        margin-bottom: 10px;
+        text-align: center;
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        font-style: normal;
+        font-size: 60px
+      }
+
+/* .image-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 40px;
+  } */
+  
+  .image-wrapper {
+    width: 170px; /* Adjust as needed */
+    height: 170px; /* Adjust as needed */
+    border-radius: 50%; /* Makes the container circular */
+    overflow: hidden; /* Hides the overflow of the image */
+  }
+  
+  .image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .image-wrapper img.icecream {
+    position: relative;
+    ; /* Adjust as needed */
+    transform: scale(0.9); /* Adjust as needed */
+}
+ 
+.item {
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+#b1{
+    position: absolute;
+    margin-top: 340px;
+    left:0;
+    margin-left: 200px;
+    
+}
+
+#b2{
+    position: absolute;
+    margin-top: 340px;
+    left:0;
+    margin-left:565px;
+}
+
+#b3{
+    position: absolute;
+    margin-top: 340px;
+    right:0;
+    margin-right:550px;
+}
+
+#b4{
+    position: absolute;
+    margin-top: 340px;
+    right:0;
+    margin-right:200px;
+}
+
+#b5{
+    position:absolute;
+    margin-top:640px;
+    left:0;
+    margin-left:140px;
+}
+
+#b6{
+    position:absolute;
+    margin-top:640px;
+    left:0;
+    margin-left:420px;
+}
+
+#bi{
+    position:absolute;
+    margin-top:640px;
+    left:0;
+    margin-left:720px;
+}
+
+#b8{
+    position:absolute;
+    margin-top:640px;
+    left:0;
+    margin-left:1050px;
+}
+
+#b9{
+    position:absolute;
+    margin-top:640px;
+    left:0;
+    margin-left:1330px;
+}
+

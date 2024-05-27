@@ -1,0 +1,114 @@
+#omkar,#kshitu{
+    color:orange;
+    font-family: "poppins",sans-serif;
+    font-size: 60px;;
+    margin-left:400px;
+    
+}
+body{
+    background:url('chinesebg.png');
+    height: 100vh;
+overflow: hidden;
+    background-size: cover; /* Cover the entire viewport */
+    
+}
+.a{
+    color: white;
+    width:20px;
+}
+.c{
+    color: white;
+    font-family: "poppins",sans-serif;
+    font-size: larger;
+}
+#b{
+    color: white;
+    width: 500px;
+}
+.ad{
+    text-decoration: none;
+    color: white;
+    font-size: larger;
+}
+table {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 70px;
+    height: 40%;
+    
+}
+table,th{
+    border: 2px solid whitesmoke;
+}
+.p{
+    font-family: "poppins",sans-serif;
+    font-size: 30px;
+    text-align: center;
+}
+.col{
+    width: 20px;
+}
+.red{
+    display: inline-block;
+    width: 40px; /* Adjust this value to change the size of the square */
+    height: 40px; /* Adjust this value to change the size of the square */
+    line-height: 35px; /* Adjust this value to vertically center the text */
+    text-align: center; 
+    background-color:whitesmoke;
+    color: black;
+    text-decoration: none;
+    /* Optional: add rounded corners */
+    font-size: 40px;
+    font-family: "poppins",sans-serif;
+}
+.vegla{
+    display: inline-block;
+    width: 40px; /* Adjust this value to change the size of the square */
+    height: 38px; /* Adjust this value to change the size of the square */
+    line-height: 40px; /* Adjust this value to vertically center the text */
+    text-align: center; 
+    background-color:whitesmoke;
+    color: black;
+    text-decoration: none;
+    /* Optional: add rounded corners */
+    font-size: 30px;
+    font-family: "poppins",sans-serif;
+    font-weight: 600;
+    opacity: 1.0;
+    margin-top: 4px;
+}
+#Chinese_Home{
+    position: absolute;
+    color: black;
+    background-color: orange;
+    font-weight: bolder;
+    font-family: "poppins",sans-serif;
+    font-size: 30px;
+    margin-left: 300px;
+    margin-bottom: 2px;
+    margin-top: 100px;
+}
+
+#Back_to_cat{
+    position: absolute;
+    color: black;
+    font-weight: bolder;
+    background-color: orange;
+    font-family: "poppins",sans-serif;
+    font-size: 30px;
+    margin-left: 600px;
+    margin-bottom: 2px;
+    margin-top: 100px;
+}
+
+#cart{
+    position: absolute;
+    color: black;
+    font-weight: bolder;
+    background-color: orange;
+    font-family: "poppins",sans-serif;
+    font-size: 30px;
+    margin-left: 1000px;
+    margin-bottom: 2px;
+    margin-top: 100px;
+}

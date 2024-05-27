@@ -1,0 +1,64 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Payment done</h1>
+    <button >Homepage</button>
+
+    <form id="yesf" action="/yesf" method="POST">
+        <h2>Enjoying our dishes??Please Give us Feedback!</h2>
+        
+        <input type="number" name="idh" placeholder="Enter stars:"><br><br>
+        <input type="text" name="nameh" placeholder="Write something for us:"><br><br>
+
+
+        <input type="submit" value="Done"><br><br>
+    </form>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const homeb = document.querySelector('button');
+        homeb.addEventListener('click', function() {
+            window.location.href = '/admin';
+        });
+    });
+</script>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/yes.css"> <!-- Assuming your CSS file is named style.css -->
+</head>
+<body>
+    <div class="container">
+        <h1>Payment Done</h1>
+        <button>Homepage</button>
+
+        <form id="yesf" action="/yesf" method="POST" class="feedback-form">
+            <h2>Enjoying our dishes?? Please Give us Feedback!</h2>
+            
+            <input type="number" name="idh" placeholder="Enter stars(1-5):" required><br><br>
+            <input type="text" name="nameh" placeholder="Write something for us:" required><br><br>
+
+            <input type="submit" value="Done"><br><br>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const homeb = document.querySelector('button');
+            homeb.addEventListener('click', function() {
+                window.location.href = '/admin';
+            });
+        });
+    </script>
+</body>
+</html>

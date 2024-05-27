@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="assets/newlogin.css">
+   
+</head>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+<body>
+  <div class="container">
+    <!-- <h1>Welcome..This is Login page</h1> -->
+    <h1>Login now.</h1>
+    <h2>Unlock a world of flavour...</h2>
+
+    
+      <form id="Loginform" action="/logins" method="POST">
+        <input type="email" name="email"  placeholder=" Enter E-mail   "><br><br>
+        <input type="password" name="Password" placeholder=" Enter Password   "><br><br>
+        <input type="hidden" name="buttons" id="buttons">
+        <input type="hidden" name="button" id="button">
+<button type="submit" id="l_u" onclick="document.getElementById('button').value = this.id">Login as user</button>
+<button type="submit" id="l_a" onclick="document.getElementById('button').value = this.id">Login as admin</button>
+      </form>
+        <button id="ForgotP2">Forgot password? Click here.</button>
+        <button id="clear2">Clear</button>
+        <button id="sign">New User? Sign Up</button><br><br>      
+
+
+    </div>
+    
+      <script src="index.js"></script>
+      <script>
+
+        //For signup page
+    document.addEventListener('DOMContentLoaded', function() {
+      const loginb = document.getElementById('sign');
+
+      loginb.addEventListener('click', function() {
+       
+        window.location.href = '/';
+      });
+    });
+
+          //For clear button
+  document.addEventListener('DOMContentLoaded', function() {
+      const clearb = document.getElementById('clear2');
+
+      clearb.addEventListener('click', function() {
+       var form=document.getElementById('Loginform');
+       form.reset();
+       
+      });
+    });
+
+    //For forgot password
+    document.addEventListener('DOMContentLoaded', function() {
+      const fp1 = document.getElementById('ForgotP2');
+
+      fp1.addEventListener('click', function() {
+        window.location.href = '/fp';
+       
+      });
+    });
+
+       //For signup page
+       document.addEventListener('DOMContentLoaded', function() {
+        const loginb = document.getElementById('submit_a');
+  
+        loginb.addEventListener('click', function() {
+         
+          window.location.href = '/admin';
+        });
+      });
+      </script>
+    
+</body>
+</html>

@@ -1,0 +1,90 @@
+/* Basic body styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Centering the container */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Full viewport height */
+    text-align: center;
+}
+
+/* Style for buttons */
+button {
+    /* background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s; */
+    padding: 15px 25px;
+        font-size: 24px;
+        text-align: center;
+        cursor: pointer;
+        outline: none;
+        color: #fff;
+        background-color: #09580c;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+        margin-bottom: 70px;
+}
+
+button:hover {
+    background-color: #1bb430;
+}
+
+/* Form styling */
+.feedback-form {
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 0 15px 0 rgba(0,0,0,0.2);
+    border-radius: 8px;
+    width: 60%; /* Adjust as needed */
+            min-height: 50%; 
+}
+
+.feedback-form h2 {
+    color: #070118;
+}
+
+/* Styling form inputs */
+.feedback-form input[type="number"],
+.feedback-form input[type="text"],
+.feedback-form input[type="submit"] {
+    padding: 8px;
+    width: 300px; /* Fixed width for all form inputs */
+    margin: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.feedback-form input[type="submit"] {
+    background-color: #5c67f2;
+    color: white;
+    border: none;
+}
+
+.feedback-form input[type="submit"]:hover {
+    background-color: #08b7ce;
+}
+h1 {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    text-align: center;
+}

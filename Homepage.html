@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet"  href="/assets/styleh.css">
+</head>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<body>
+  
+    <h1 id="title" >CANTEEN BITES</h1>
+    <h1 id="home">Where Every Craving Finds It's <br> Perfect Bites!"</h1>
+    <!-- <div id="homediv"> -->
+      <br><br><br><br><br><br>
+    <Button class="homebuttons" id="logout"></Button>
+    
+    <Button  class="homebuttons" id="placeorder">Start ordering</Button>
+    <Button  class="homebuttons" id="viewbill">1</Button>
+    
+    <Button  class="homebuttons" id="exith"></Button>
+    
+   <br><br><br><br>
+   
+    
+    <br><br><br><br><br><br>
+<!-- </div> -->
+<script src="index.js"></script>
+<script>
+    //For login page
+    document.addEventListener('DOMContentLoaded', function() {
+      const loginb = document.getElementById('logout');
+
+      loginb.addEventListener('click', function() {
+       
+        window.location.href = '/login';
+      });
+    });
+
+    //For signup page
+    document.addEventListener('DOMContentLoaded', function() {
+    const exith = document.getElementById('exith');
+
+      exith.addEventListener('click', function() {
+       
+        window.location.href = '/';
+      });
+    });
+
+    //For Manage Category page
+    document.addEventListener('DOMContentLoaded', function() {
+      const managec = document.getElementById('Manage_Category');
+
+      managec.addEventListener('click', function() {
+       console.log("Manage Clicked");
+        window.location.href = '/manage';
+      });
+    });
+
+        //For New product page
+        document.addEventListener('DOMContentLoaded', function() {
+          const newp = document.getElementById('New_p');
+    
+          newp.addEventListener('click', function() {
+           console.log("Manage Clicked");
+            window.location.href = '/newproduct';
+          });
+        });
+
+        //For placeorder
+        document.addEventListener('DOMContentLoaded', function() {
+          const new1= document.getElementById('placeorder');
+    
+          new1.addEventListener('click', function() {
+           console.log("Manage Clicked");
+            window.location.href = '/newcategory';
+          });
+        });
+
+        //For add to cart
+        document.addEventListener('DOMContentLoaded', function() {
+          const new1= document.getElementById('viewbill');
+    
+          new1.addEventListener('click', function() {
+           console.log("Cart Clicked");
+            window.location.href = '/Cart';
+          });
+        });
+
+
+
+</script>
+</body>
+</html>

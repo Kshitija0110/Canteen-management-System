@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Records</title>
+    <link rel="stylesheet" href="assets/Signupstyle.css"> 
+</head>
+<body>
+  <div class="container">
+
+  <h1 id="title">SignUp</h1>
+  
+  <button id="ForgotP1">Forgot password</button>
+  <button id="login">Login</button>
+  <button id="clear1">Clear</button><br><br>
+  <form id="myform" action="" method="POST">
+
+    <input type="text" name="name" placeholder="Enter name:"><br><br>
+    <input type="email" name="email" placeholder="Enter Email:"><br><br>
+    <input type="number" name="mob_no" placeholder="Enter Mobile no:"><br><br>
+    <input type="text" name="Address" placeholder="Enter Address:"><br><br>
+    <input type="password" name="Password" placeholder="Enter Password:"><br><br>
+    <!-- <input type="submit" value="Submit"><br><br> -->
+    <!-- <button type="submit" id="submitb" >Sign up as user</button>
+    <button type="submit" id="a_sign" >Sign up as admin</button> -->
+    <input type="hidden" name="button" id="button">
+<button type="submit" id="submitb" onclick="document.getElementById('button').value = this.id">Sign up as user</button>
+<button type="submit" id="a_sign" onclick="document.getElementById('button').value = this.id">Sign up as admin</button>
+  </form>
+</div>
+
+  <script src="index.js"></script>
+    <script>
+      //For homepage link
+      document.addEventListener('DOMContentLoaded', function() {
+      const homeb = document.getElementById('home');
+
+      homeb.addEventListener('click', function() {
+      
+        window.location.href = '/home';
+      });
+    });
+//For login page
+    document.addEventListener('DOMContentLoaded', function() {
+      const loginb = document.getElementById('login');
+
+      loginb.addEventListener('click', function() {
+       
+        window.location.href = '/login';
+      });
+    });
+  //For clear button
+  document.addEventListener('DOMContentLoaded', function() {
+      const clearb = document.getElementById('clear1');
+
+      clearb.addEventListener('click', function() {
+       var form=document.getElementById('myform');
+       form.reset();
+       
+      });
+    });
+    //For forgot password
+    document.addEventListener('DOMContentLoaded', function() {
+      const fp1 = document.getElementById('ForgotP1');
+
+      fp1.addEventListener('click', function() {
+        window.location.href = '/fp';
+       
+      });
+    });
+    </script> 
+</body>
+</html>

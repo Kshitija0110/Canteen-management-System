@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category List</title>
+    <link rel="stylesheet"  href="/assets/new_product.css">
+</head>
+<body>
+    <button id="HOME1">Back to Homepage</button>
+    <table border="1" width="50%" id="mytable">
+        <h1>Category List</h1>
+        <tr>
+            <th>Id</th>
+            <th>Category item</th>
+            
+        </tr>
+
+        <% if(category.length>0){ %>
+            <% for(var i=0;i<category.length;i++){ %>
+                <tr>
+                    <td><%-category[i].id %></td>
+                    <td><%-category[i].Category_Name %></td>
+                    <!-- <td><a href="/delete?id=<%-category[i].id %>">Delete</a></td> -->
+                </tr>
+            <% } %>
+            <% }else{  %>
+                <h1>Data not found</h1>
+            <% }  %>
+    </table>
+
+    <br><br><br>
+
+<!-- /////////// -->
+<h1>New Products List</h1>
+
+<div id="category-dropdown">
+    <select id="category-select">
+        <option value="">All Categories</option>
+        <% for(var i = 0; i < category.length; i++){ %>
+            <option value="<%-category[i].Category_Name %>"><%-category[i].Category_Name %></option>
+        <% } %>
+    </select>
+</div>
+<br><br>
+    <table border="1" width="50%" id="category-table">
+      
+        <tr>
+            <th>Product Id</th>
+            <th>New Product name</th>
+            <th>C_id</th>
+            <th>C_name</th>
+            <th>Cost</th>
+            <th>Actions</th>
+            
+        </tr>
+
+        <% if(products.length>0){ %>
+            <% for(var i=0;i<products.length;i++){ %>
+                <tr>
+                    <td><%-products[i].product_id %></td>
+                    <td><%-products[i].product_name %></td>
+                    <td><%-products[i].category_id %></td>
+                    <td><%-products[i].C_Name %></td>
+                    <td><%-products[i].cost %></td>
+                    <td><a href="/deletep?product_id=<%-products[i].product_id %>">Delete</a></td>
+                    
+                </tr>
+            <% } %>
+            <% }else{  %>
+                <h1>Data not found</h1>
+            <% }  %>
+    </table>
+   
+    
+    <form id="myformp" action="" method="POST">
+        <h2>Add New Product</h2>
+        
+        <input type="number" name="id" placeholder="Enter id of Category:"><br><br>
+        <input type="text" name="name" placeholder="Enter new product name:"><br><br>
+        <input type="number" name="cost" placeholder="Enter cost:"><br><br>
+
+        <input type="submit" value="Add"><br><br>
+    </form>
+
+    <br>
+    <br>
+   
+
+    <form id="costform" action="/changecost" method="POST">
+        <h2>Change Cost</h2>
+        
+        <input type="number" name="id" placeholder="Enter product id :"><br><br>
+        
+        <input type="number" name="cost" placeholder="Enter new cost:"><br><br>
+
+        <input type="submit" value="Change Cost"><br><br>
+    </form>
+
+    <br>
+    <br>
+    
+
+    <script src="index.js"></script>
+    <script>
+        const categorySelect = document.getElementById('category-select');
+        const categoryTable = document.getElementById('category-table');
+
+        categorySelect.addEventListener('change', () => {
+            const selectedCategory = categorySelect.value;
+            console.log(selectedCategory)
+            fetch('/fetch-data', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ category: selectedCategory })
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Clear the table body
+                categoryTable.innerHTML = `
+                    <tr>
+                        <th>Product Id</th>
+            <th>New Product name</th>
+            <th>C_id</th>
+            <th>C_name</th>
+            <th>Cost</th>
+           
+                    </tr>
+                `;
+
+                // Populate the table with fetched data
+                data.forEach(category => {
+                    categoryTable.innerHTML += `
+                        <tr>
+                            <td>${category.product_id}</td>
+
+                            <td>${category.product_name }</td>
+                            <td>${category.category_id }</td>
+                            <td>${category.C_Name }</td>
+                            <td>${category.cost }</td>
+                            
+                        </tr>
+                    `;
+                });
+            })
+            .catch(error => console.error('Error:', error));
+        });
+
+         //For homepage link
+      document.addEventListener('DOMContentLoaded', function() {
+      const homeb = document.getElementById('HOME1');
+
+      homeb.addEventListener('click', function() {
+      
+        window.location.href = '/admin';
+      });
+    });
+
+    
+    
+    </script>
+
+
+    
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bar Graph Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        canvas {
+            max-width: 800px;
+            margin: 0 auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="barChart"></canvas>
+    <script>
+        // Extract data passed from Node.js
+        const data = JSON.parse('<%-data %>');
+
+        // Prepare data for Chart.js
+        const labels = data.map(item => item.label);
+        const values = data.map(item => item.value);
+        const backgroundColors = [
+            'red', 'blue', 'yellow', 'green', 'purple',
+            'orange', 'pink', 'cyan', 'magenta'
+        ].slice(0, labels.length);
+
+        // Initialize Chart.js
+        const ctx = document.getElementById('barChart').getContext('2d');
+        const barChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Number of Orders',
+                    data: values,
+                    backgroundColor: backgroundColors,
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+    </script>
+</body>
+</html>

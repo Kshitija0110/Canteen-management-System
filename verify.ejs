@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify</title>
+    <style>
+        body{
+            background:linear-gradient(to right,#be9fbe,#6c73d4);
+            
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <table border="1" width="50%">
+        <h1>Verify users</h1>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Address</th>
+
+            <th>Registered Time</th>
+            <th>Feedback</th>
+            <th>Rating</th>
+        </tr>
+
+        <% if(category.length>0){ %>
+            <% for(var i=0;i<category.length;i++){ %>
+                <tr>
+                    <td><%-category[i].Name %></td>
+                    <td><%-category[i].Email %></td>
+                    <td><%-category[i].Mobile_No %></td>
+                    <td><%-category[i].Address %></td>
+
+                    <td><%-category[i].timestamp %></td>
+                    <td><%-category[i].Feedback %></td>
+                    <td><%-category[i].Rating %></td>
+                </tr>
+            <% } %>
+            <% }else{  %>
+                <h1>Data not found</h1>
+            <% }  %>
+    </table>
+
+    <br><br><br>
+   
+
+    <br>
+    <br>
+  
+    <button id="HOME">Back to Homepage</button>
+    
+
+    <script src="index.js"></script>
+    <script>
+         //For homepage link
+      document.addEventListener('DOMContentLoaded', function() {
+      const homeb = document.getElementById('HOME');
+
+      homeb.addEventListener('click', function() {
+      
+        window.location.href = '/admin';
+      });
+    });
+
+
+     
+   
+    </script>
+
+
+    
+</body>
+</html>

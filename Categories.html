@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories</title>
+    
+    <link rel="stylesheet" href="/assets/category_css.css">
+</head>
+<body>
+    <h1 id="titlec" >CATEGORIES</h1>
+    <button id="cart">Cart</button>
+    <!-- <div class="image-container">
+        <img src="Thali1.jpg" alt="Image 1">
+        <img src="Pizza2.jpg" alt="Image 2">
+        <img src="Burger3.jpg" alt="Image 3">
+        <img src="Sandwich4.jpg" alt="Image 4">
+        <img src="Nonveg5.jpg" alt="Image 5">
+        <img src=".jpg" alt="Image 6">
+        <img src="Icecream7.jpg" alt="Image 7">
+        <img src="South8.jpg" alt="Image 8">
+        <img src="/assets/Maharashtrian9.jpg" alt="Image 9">
+      </div> -->
+<div class="item">
+      <div class="image-container" >
+        <div class="image-wrapper" id="t">
+          <img src="/assets/Thali1.jpg"  alt="Image 1">
+        </div>
+        <button id="b1">Chinese</button>
+    </div>
+
+    <div class="item">
+        <div class="image-wrapper" id="p">
+          <img src="/assets/Pizza2.png" alt="Image 2">
+        </div>
+        <button id="b2">Pizza</button>
+    </div>
+
+    <div class="item"></div>
+        <div class="image-wrapper" id="b">
+          <img src="/assets/Burger3.jpg" alt="Image 3">
+        </div>
+        <button id="b3">Burger</button>
+    </div>
+
+        <!-- Repeat for other images -->
+        <div class="item">
+        <div class="image-wrapper" id="s">
+            <img src="/assets/Sandwich4.jpg" alt="Image 3">
+          </div>
+          <button id="b4">Sandwich</button>
+        </div>
+
+        <div class="item">
+          <div class="image-wrapper" id="n">
+            <img src="/assets/Nonveg.jpg" alt="Image 3">
+          </div>
+          <button id="b5">Nonveg</button>
+        </div>
+
+        <div class="item">
+          <div class="image-wrapper" id="c">
+            <img src="/assets/Cold6.jpg" alt="Image 3">
+          </div>
+          <button id="b6">Cold</button>
+        </div>
+
+        <div class="item">
+          <div class="image-wrapper" id="i">
+            <img src="/assets/Icecream7.jpeg" alt="Image 3">
+          </div>
+          <button id="bi">Icecream</button>
+          
+
+        </div>
+<!-- <button id="bi">Ice</button> -->
+        <div class="item">
+          <div class="image-wrapper" id="so">
+            <img src="/assets/South8.jpg" alt="Image 3">
+          </div>
+          <button id="b8">South</button>
+        </div>
+
+        <div class="item">
+          <div class="image-wrapper" id="m">
+            <img src="/assets/Maharashtrian9.jpg" alt="Image 3">
+          </div>
+          <button id="b9">Maharashtrian</button> 
+        </div>
+
+      </div>
+      
+
+      <script src="index.js"></script>
+      <script>
+
+        //For Chinese
+        document.addEventListener('DOMContentLoaded', function() {
+            const fp1 = document.getElementById('b1');
+      
+            fp1.addEventListener('click', function() {
+              window.location.href = '/chinese';
+             
+            });
+          });
+
+          //For pizza
+          document.addEventListener('DOMContentLoaded', function() {
+            const fp1 = document.getElementById('b2');
+      
+            fp1.addEventListener('click', function() {
+              window.location.href = '/pizza';
+             
+            });
+          });
+
+          //For Burger
+          document.addEventListener('DOMContentLoaded', function() {
+            const fp1 = document.getElementById('b3');
+      
+            fp1.addEventListener('click', function() {
+              window.location.href = '/burger';
+             
+            });
+          });
+
+          //For Sandwich
+          document.addEventListener('DOMContentLoaded', function() {
+            const fp1 = document.getElementById('b4');
+      
+            fp1.addEventListener('click', function() {
+              window.location.href = '/sandwich';
+             
+            });
+          });
+
+//For Nonveg
+          document.addEventListener('DOMContentLoaded', function() {
+            const fp1 = document.getElementById('b5');
+      
+            fp1.addEventListener('click', function() {
+              window.location.href = '/nonveg';
+             
+            });
+          });
+
+
+          //For Cold
+          document.addEventListener('DOMContentLoaded', function() {
+            const fp1 = document.getElementById('b6');
+      
+            fp1.addEventListener('click', function() {
+              window.location.href = '/cold';
+             
+            });
+          });
+
+          //Fpr Icecream
+          document.addEventListener('DOMContentLoaded', function() {
+            const button = document.getElementById('bi');
+      
+            button.addEventListener('click', function() {
+              console.log("yes i");
+              window.location.href = '/icecream';
+             
+            });
+          });
+
+          //For South
+          document.addEventListener('DOMContentLoaded', function() {
+            const fp1 = document.getElementById('b8');
+      
+            fp1.addEventListener('click', function() {
+              window.location.href = '/south';
+             
+            });
+          });
+
+          //For Maharashtrian
+          document.addEventListener('DOMContentLoaded', function() {
+            const fp1 = document.getElementById('b9');
+      
+            fp1.addEventListener('click', function() {
+              window.location.href = '/maha';
+             
+            });
+          });
+
+          document.addEventListener('DOMContentLoaded', function() {
+            const homeb = document.getElementById('Back_to_cat');
+        
+            homeb.addEventListener('click', function() {
+            
+              window.location.href = '/newcategory';
+            });
+          });
+
+          //For add to cart
+        document.addEventListener('DOMContentLoaded', function() {
+          const new1= document.getElementById('cart');
+    
+          new1.addEventListener('click', function() {
+           console.log("Cart Clicked");
+            window.location.href = '/Cart';
+          });
+        });
+
+
+
+      </script>
+      
+     
+      
+      
+</body>
+</html>

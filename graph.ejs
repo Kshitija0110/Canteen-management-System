@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pie Chart Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                background-color: black;
+            }
+            h1{
+                color: white;
+            }
+           
+            #chartContainer {
+                width: 600px; /* Adjust as needed */
+                height: 600px; /* Adjust as needed */
+            }
+        </style>
+    
+</head>
+<body>
+    <h1>Pie chart for food products sold</h1>
+    <div id="chartContainer">
+    <canvas id="pieChart"></canvas>
+</div>
+    <script>
+        // Extract data passed from Node.js
+        const data = JSON.parse('<%-data %>');
+
+        // Prepare data for Chart.js
+        const labels = data.map(item => item.label);
+        const values = data.map(item => item.value);
+        const backgroundColors = [
+            
+            '#ff0000', '#ff4000', '#ff8000', '#ffbf00', '#ffff00',
+            '#ff8000', '#ff4000', '#ff0000', '#ff4000', '#ff8000'
+        ].slice(0, labels.length);
+
+        // Initialize Chart.js
+        const ctx = document.getElementById('pieChart').getContext('2d');
+        const pieChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: labels,
+                datasets: [{
+                    data: values,
+                    backgroundColor: backgroundColors
+                }]
+            },
+            options: {
+                responsive: true,
+                legend: {
+                    position: 'right'
+                }
+            }
+        });
+    </script>
+</body>
+</html>

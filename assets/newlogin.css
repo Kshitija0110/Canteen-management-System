@@ -1,0 +1,150 @@
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: url('login bg dark.jpg'); /* Delicious fruit basket image */
+    background-size: cover; /* Cover the entire viewport */
+    display: flex;
+    justify-content: center;
+    /* Replace with your desired width and height */
+      
+    /* Optional: set other properties like background position and repeat */
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+
+
+h1 {
+    color: #ffffff;
+        margin-top: 100px;
+        margin-bottom: 10px;
+        text-align: center;
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        font-style: normal;
+        font-size: 60px
+      }
+
+
+h2 {
+    color: #FF9633;
+    margin-top:5px;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 21px;
+    letter-spacing: 2px;
+
+}
+
+#ForgotP2 {
+    
+    display: block;
+    margin: 10px auto; /* Centers the buttons horizontally*/ 
+    border: none; /* Remove border from other buttons*/
+    
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-weight: 350;
+    font-style: normal;
+    font-size: 15px;
+    padding-top: 20px;
+    padding-right: 30px;
+}
+
+
+
+#sign{
+    
+    display: block;
+    border: none; /* Remove border from other buttons*/
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-weight: 350;
+    font-style: normal;
+    font-size: 15px;
+    padding-top: 10px;
+    /* padding-left: 100px; */
+}
+
+
+
+
+#clear2
+ {
+    display: block;
+    margin: 10px auto; /* Centers the buttons horizontally*/ 
+    border: none; /* Remove border from other buttons*/ 
+    background-color: transparent;
+    color: #FF9633;
+    cursor: pointer;
+    margin: 5px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 350;
+    font-style: normal;
+    font-size: 15px;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust the height as needed */
+}
+
+
+#submitb {
+    display: block;
+    margin: 20px auto; /* Adjust margin for the submit button */
+    margin-left: 125px; /* Move the button to the right by 20 pixels */
+    text-align: center; /* Align the text inside the button to the center */
+    border: 2px solid #FF9633; /* Add a 2px solid border with color #FF9633 */
+    padding: 10px 20px; /* Add padding to the button */
+    background-color: transparent; /* Set background color to transparent */
+    color: #FF9633; /* Set text color */
+    font-family: "Poppins", sans-serif;
+    font-weight: 350;
+    font-style: normal;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#l_a,#l_u {
+    display: block;
+    margin: 30px auto; /* Adjust margin for the submit button */
+    margin-left: 120px; /* Move the button to the right by 20 pixels */
+    text-align: center; /* Align the text inside the button to the center */
+    border: 2px solid #FF9633; /* Add a 2px solid border with color #FF9633 */
+    padding: 10px 20px; /* Add padding to the button */
+    background-color: transparent; /* Set background color to transparent */
+    color: #FF9633; /* Set text color */
+    font-family: "Poppins", sans-serif;
+    font-weight: 350;
+    font-style: normal;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+
+
+input[type="email"],
+input[type="password"] {
+    /*width: calc(100% - 10px);*/
+    width: 350px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid  #FF9633;
+    border-radius: 0px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 350;
+    font-style: normal;
+    font-size: 15px;
+}
+

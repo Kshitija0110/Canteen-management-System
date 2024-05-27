@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyCart</title>
+    <link rel="stylesheet" href="/assets/cart.css"
+</head>
+<body>
+    <div id="green">
+        <h3>Payment done !<h3>
+    </div>
+    <table border="1" width="50%">
+        <h1>Your Cart and Bill</h1>
+        
+        <p ><%= name %></p>
+        <p ><%= phone %></p>
+        <p ><%= mail %></p>
+        <p ><%= add %></p>
+        
+        <tr>
+            <th>Id</th>
+            <th>Product Name</th>
+            <th>Cost</th>
+            <th>Count</th>
+        </tr>
+        <% var totalCost = 0; %>
+        <% if(products.length>0){ %>
+            <% for(var i=0;i<products.length;i++){ %>
+                <tr>
+                    <td><%-products[i].product_id %></td>
+                    <td><%-products[i].product_name %></td>
+                    <td><%-products[i].cost %></td>
+                    <td><%-products[i].count %></td>
+                    
+                </tr>
+                <% totalCost += products[i].cost * products[i].count; %>
+            <% } %>
+        <% }else{  %>
+            <h1>You've nothing in your cart.Start ordering to see items here..</h1>
+        <% }  %>
+    </table>
+    <br><br>
+    <p>Total cost: <%= totalCost %></p>
+    <div class="button-container">
+    <button id="Chinese_Home">Homepage</button>
+    <button id="Back_to_cat">Back to Categories</button>
+    
+    <br><br>
+
+    
+
+    <button id="pay">Pay now</button>
+    <div id="paydiv">
+        <h4>Are you sure want to pay?</h4>
+        <button id="yes">Yes</button>
+        <button id="cancel">Cancel</button>
+    </div>
+</div>
+    <br><br>
+    <img id="qr" src="/assets/QRSCANNER.jpg">
+    <br><br>
+    <script src="index.js"></script>
+    <script>
+
+//For homepage link
+      document.addEventListener('DOMContentLoaded', function() {
+      const homeb = document.getElementById('Chinese_Home');
+
+      homeb.addEventListener('click', function() {
+      
+        window.location.href = '/home';
+      });
+    });
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        const homeb = document.getElementById('Back_to_cat');
+    
+        homeb.addEventListener('click', function() {
+        
+          window.location.href = '/newcategory';
+        });
+      });
+
+      document.addEventListener('DOMContentLoaded', function() {
+        const homeb = document.getElementById('yes');
+    
+        homeb.addEventListener('click', function() {
+        
+          window.location.href = '/payment';
+        });
+      });
+
+      document.getElementById('pay').addEventListener('click', function() {
+        document.getElementById('paydiv').style.display = 'block'; /* Show the div when the button is clicked */
+    });
+
+    document.getElementById('cancel').addEventListener('click', function() {
+        document.getElementById('paydiv').style.display = 'none'; /* Hide the div when the "Cancel" button is clicked */
+    });
+
+    //document.getElementById('yes').addEventListener('click', function() {
+     //   window.location.href = '/yes';
+        
+         
+    //});
+
+   
+
+
+     
+   
+    </script>
+</body>
+</html>

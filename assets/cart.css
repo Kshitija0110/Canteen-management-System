@@ -1,0 +1,49 @@
+#pay{
+    height: 40px;
+    background-color: green;
+
+}
+/* #paydiv{
+    background-color: grey;
+} */
+#paydiv{
+    /* background-color: grey; */
+    display:none;
+    margin-right: 5px;
+    position: relative;
+    
+    top: 5px;
+}
+#green {
+    display: none;
+    background-color: green;
+    height: 40px;
+    width: 100px;
+    margin-left: 5px;
+    position: absolute;
+    right: -100px; /* Start off the screen to the right */
+    transition: right 7s; /* Move from right to left over 2 seconds */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f8f8f8;
+    font-family: Arial, sans-serif;
+}
+#qr{
+    height:400px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+
+}
+.button-container button {
+    margin: 0 10px; /* Adjust as needed */
+}

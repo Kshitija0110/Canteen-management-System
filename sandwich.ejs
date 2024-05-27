@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza</title>
+    <link rel="stylesheet" href="assets/sandwich.css"> 
+</head>
+<body>
+    <table >
+        <h1 id="omkar">Find your perfect pick!!</h1>
+        <tr>
+            <th class="c">Product Name</th>
+            <th class="c">Del</th>
+            <th class="c">No.</th>
+            <th class="c">Add</th>
+            <th class="c">Cost</th>
+            
+        </tr>
+
+        <% if(products.length>0){ %>
+            <% for(var i=0;i<products.length;i++){ %>
+                <tr>
+                    <td id="b" class="p"><%-products[i].product_name %></td>
+                    <td class="a" class="red">
+                        <a a class="red" class="p" href="/s_delete?id_s=<%-products[i].product_id %>">-</a>
+                    </td>
+                    <td class="vegla"><%-sandwich_count[products[i].product_id] ||Mycount %></td>
+
+                    <td class="a" class="red">
+                        <a class="red" class="p" href="/s_add?id_s=<%-products[i].product_id %>&s_name=<%-products[i].product_name %>">+</a>
+                    </td>
+                    <td id="b" class="p col"><%-products[i].cost %>₹</td>
+                   
+                   
+                </tr>
+            <% } %>
+        <% }else{  %>
+            <h1>Data not found</h1>
+        <% }  %>
+    </table>
+
+    <button id="Chinese_Home">Homepage</button>
+    <button id="Back_to_cat">Back to Categories</button>
+    <button id="cart">Cart</button>
+    <script src="index.js"></script>
+    <script>
+
+//For homepage link
+      document.addEventListener('DOMContentLoaded', function() {
+      const homeb = document.getElementById('Chinese_Home');
+
+      homeb.addEventListener('click', function() {
+      
+        window.location.href = '/home';
+      });
+    });
+
+//For category link
+document.addEventListener('DOMContentLoaded', function() {
+    const homeb = document.getElementById('Back_to_cat');
+
+    homeb.addEventListener('click', function() {
+    
+      window.location.href = '/newcategory';
+    });
+  });
+  document.addEventListener('DOMContentLoaded', function() {
+    const homeb = document.getElementById('cart');
+
+    homeb.addEventListener('click', function() {
+    
+      window.location.href = '/Cart';
+    });
+  });
+
+
+     
+   
+    </script>
+</body>
+</html>
